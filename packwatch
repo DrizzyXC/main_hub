@@ -266,11 +266,7 @@ if(game.PlaceId == 6536647319) then
     game:GetService("ReplicatedStorage").ScriptCommunication.Set:FireServer(unpack(args))
 
     --// On load
-    Hub:SelectPage(Hub.pages[1], true)
-    end)
-end 
-
-    --// UI Themes
+     --// UI Themes
     local themes = {
         Background = Color3.fromRGB(24, 24, 24);
         Glow = Color3.fromRGB(0, 0, 0);
@@ -301,3 +297,7 @@ end
     end, function()
         print("Keybind changed");
     end)
+
+    Hub:SelectPage(Hub.pages[1], true)
+    end)
+end 
