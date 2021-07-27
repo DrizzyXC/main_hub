@@ -19,8 +19,8 @@ local yen = 10000
 local clan
 local race
 
-local agilityStat = 500
-local defenseStat = 500
+local agilityStat = 50000
+local defenseStat = 50000
 
 --// Children \\--
 local label_Features = tab_Features:Label("--- MAIN PROPERTIES ---")
@@ -65,12 +65,12 @@ end)
 
 local label_Features2 = tab_Features:Label("--- STAT CAPS ---")
 
-local slider_Agility = tab_Features:Textbox("Agility Stat", "text", function(value)
+local slider_Agility = tab_Features:Slider("Agility Stat", 0, 100000, 50000, function(value)
     agilityStat = value
     print(agilityStat)
 end)
 
-local slider_Defense = tab_Features:Textbox("Defense Stat", "text", function(value)
+local slider_Defense = tab_Features:Slider("Defense Stat", 0, 100000, 50000, function(value)
     defenseStat = value
     print(defenseStat)
 end)
