@@ -1,6 +1,6 @@
 --// Initialize
 
-local checkGame = function(
+local checkGame = function()
     local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))();
     local Hub = UILibrary.new("#Packwatch Scripts - Slayers Unleashed", 5013109572);    
     local main = Hub:addPage("Features");
@@ -264,7 +264,7 @@ local checkGame = function(
 
         game:GetService("ReplicatedStorage").ScriptCommunication.Set:FireServer(unpack(args))
     end)
-) end
+end
 
 checkGame()
 
