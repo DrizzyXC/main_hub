@@ -15,8 +15,6 @@ if(game.PlaceId == 6536647319) then
     local demon_art;
     local clan;
     local race;
-    
-    Hub:SelectPage(Hub.pages[1], true)
 
     data_changer:addDropdown("Breathing", {"Water Breathing", "Thunder Breathing", "Flame Breathing", "Mist Breathing", "Insect Breathing", "Wind Breathing", "Beast Breathing", "Flower Breathing", "Sound Breathing"}, function(choice)
         breathing = choice;
@@ -299,4 +297,5 @@ if(game.PlaceId == 6536647319) then
     end, function()
         print("Keybind changed");
     end)
+    Hub:SelectPage(Hub.pages[1], true)
 end 
