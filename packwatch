@@ -9,7 +9,7 @@ local Main = VLib:Window("Slayers Unleashed - #Packwatch Hub")
 local tab_Features = Main:Tab("Main Functions")
 local tab_Extra = Main:Tab("Miscellaneous")
 local tab_Settings = Main:Tab("Environment")
-local tab_Credits = Main:Tab("recognition")
+local tab_Credits = Main:Tab("Recognition")
 
 local breathing
 local demon_art
@@ -19,8 +19,8 @@ local yen = 10000
 local clan
 local race
 
-local agilityStat
-local defenseStat
+local agilityStat = 500
+local defenseStat = 500
 
 --// Children \\--
 local label_Features = tab_Features:Label("--- MAIN PROPERTIES ---")
@@ -65,12 +65,12 @@ end)
 
 local label_Features2 = tab_Features:Label("--- STAT CAPS ---")
 
-local slider_Agility = tab_Features:Slider("Agility Cap", 0, 100000, 50000, function(value)
+local slider_Agility = tab_Features:Textbox("Agility Stat", function(value)
     agilityStat = value
     print(agilityStat)
 end)
 
-local slider_Defense = tab_Features:Slider("Defense Cap", 0, 100000, 50000, function(value)
+local slider_Defense = tab_Features:Textbox("Defense Stat", function(value)
     defenseStat = value
     print(defenseStat)
 end)
@@ -291,8 +291,19 @@ local manipulate_Button = tab_Features:Button("Manipulate", function()
 
         game:GetService("ReplicatedStorage").ScriptCommunication.Set:FireServer(unpack(args))
     end)
-    --
+    --//
+    local title = tab_Credits:Label("--- CREDITS ---")
+    local person = tab_Credits:Label("Shaun.#8678")
+    local cord = tab_Credits:Button("Discord -> discord.gg/Y8bCbsVjR9", function()
+        setclipboard("Y8bCbsVjR9")
+    end)
 else
     local player = game:GetService('Players').LocalPlayer
     player:Kick("Game not supported")
 end
+
+
+
+
+
+--// scripting tests
