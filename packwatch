@@ -1,6 +1,6 @@
 --// Initialize
 local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))();
-
+local supported = {6536647319}
 --// Game Check
 if(game.PlaceId == 6536647319) then
     local Hub = UILibrary.new("#Packwatch Hub - Slayers Unleashed", 5013109572);    
@@ -299,7 +299,7 @@ if(game.PlaceId == 6536647319) then
     --// On load
     Hub:SelectPage(Hub.pages[1], true)
     end)
-else
+elseif(not table.find(supported, game.PlaceId)) then
     local Hub = UILibrary.new("#Packwatch Hub - Game not detected")
     local Page = Hub:addPage("Features")
     local Section = Page:addSection("Game is not supported!")
