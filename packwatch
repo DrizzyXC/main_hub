@@ -288,15 +288,9 @@ local themes = {
 
 
 local page_Theme = Hub:addPage("Settings", 5012544693)
-local credits = Hub:addPage("Credits", 5012544693)
 
 local colors = page_Theme:addSection("UI Colors")
-local creds = credits:addSection("Credits")
-local keybinds = page_Theme:addSection("Toggle Keybind")
-
-local credits_one = creds:addButton("Shaun.#8678")
-local credits_two = creds:addButton("xmyasium#5235")
-local credits_three = creds:addButton("chaku#0831")
+local keybinds = page_Theme:addSection("Toggle Keybind"
 
 for theme, color in pairs(themes) do
 	colors:addColorPicker(theme, color, function(color3)
