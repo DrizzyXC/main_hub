@@ -299,10 +299,4 @@ if(game.PlaceId == 6536647319) then
     --// On load
     Hub:SelectPage(Hub.pages[1], true)
     end)
-elseif(game.PlaceId == 7147531581) then
-    local Hub = UILibrary.new("#Packwatch Hub - Game not detected")
-    local Page = Hub:addPage("Features")
-    local Section = Page:addSection("Game is not supported!")
-    
-    Hub:SelectPage(Hub.pages[1], true)
 end 
