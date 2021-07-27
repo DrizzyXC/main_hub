@@ -17,7 +17,6 @@ if(game.PlaceId == 6536647319) then
     local race;
     
     Hub:SelectPage(Hub.pages[1], true)
-    end)
 
     data_changer:addDropdown("Breathing", {"Water Breathing", "Thunder Breathing", "Flame Breathing", "Mist Breathing", "Insect Breathing", "Wind Breathing", "Beast Breathing", "Flower Breathing", "Sound Breathing"}, function(choice)
         breathing = choice;
