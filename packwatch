@@ -1,56 +1,82 @@
---// Initialize
-local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))();
+--// Initialize \\--
+local VLib = loadstring(game:HttpGet("https://pastebin.com/raw/i5bmyXNi"))()
 
---// Game Check
+--// Game detection + functions \\--
 if(game.PlaceId == 6536671967 or game.PlaceId == 6536647319) then
-    local Hub = UILibrary.new("#Packwatch Hub - Slayers Unleashed", 5013109572);    
-    local main = Hub:addPage("Features", 5012544693);
 
-    local data_changer = main:addSection("Data Manipulation");
+local Main = VLib:Window("Slayers Unleashed - #Packwatch Hub")
 
-    local level;
-    local yen;
-    local statpoints;
-    local breathing;
-    local demon_art;
-    local clan;
-    local race;
+local tab_Features = Main:Tab("Main Functions")
+local tab_Extra = Main:Tab("Miscellaneous")
+local tab_Settings = Main:Tab("Environment")
+local tab_Credits = Main:Tab("recognition")
 
-    data_changer:addDropdown("Breathing", {"Water Breathing", "Thunder Breathing", "Flame Breathing", "Mist Breathing", "Insect Breathing", "Wind Breathing", "Beast Breathing", "Flower Breathing", "Sound Breathing"}, function(choice)
-        breathing = choice;
-        print(breathing);
-    end)
-    data_changer:addDropdown("Blood Demon Art", {"Blood", "Akaza", "String", "Drum", "Arrow", "Tamari", "Swamp"}, function(choice)
-        demon_art = choice;
-        print(demon_art);
-    end)
-    data_changer:addDropdown("Clan", {"Tomioka", "Urokodaki", "Agatsuma", "Kocho", "Hashibira", "Rengoku", "Tsuyuri", "Shinazugawa", "Tokito", "Kamado"}, function(choice)
-        clan = choice;
-        print(clan);
-    end)
-    data_changer:addDropdown("Race", {"Human", "Demon", "Hybrid"}, function(choice)
-        if(choice == "Human") then
-            race = 1;
-        elseif(choice == "Demon") then
-            race = 3;
-        elseif(choice == "Hybrid") then
-            race = 4;
-        end
-        print(choice.." "..race);
-    end)
-    data_changer:addSlider("Level", 7500, 0, 15000, function(choice)
-        level = choice;
-        print(level);
-    end)
-    data_changer:addSlider("Yen", 10000, 0, 20000, function(choice)
-        yen = choice;
-        print(yen);
-    end)
-    data_changer:addSlider("Stat Points", 5000, 0, 10000, function(choice)
-        statpoints = choice;
-        print(statpoints);
-    end)
-    data_changer:addButton("Manipulate", function()
+local breathing
+local demon_art
+local experience = 7500
+local statpoints = 5000
+local yen = 10000
+local clan
+local race
+
+local agilityStat
+local defenseStat
+
+--// Children \\--
+local label_Features = tab_Features:Label("--- MAIN PROPERTIES ---")
+
+local dropdown_Breath = tab_Features:Dropdown("Breathing Style", {"Water Breathing", "Thunder Breathing", "Flame Breathing", "Mist Breathing", "Insect Breathing", "Wind Breathing", "Beast Breathing"}, function(choice)
+    breathing = choice
+    print(breathing)
+end)
+local dropdown_BDA = tab_Features:Dropdown("Blood Demon Art", {"Blood", "Akaza", "String", "Drum", "Arrow", "Temari", "Swamp"}, function(choice)
+    demon_art = choice
+    print(demon_art)
+end)
+local dropdown_Clan = tab_Features:Dropdown("Clan", {"Tomioka", "Urokodaki", "Agatsuma", "Kocho", "Hashibira", "Rengoku", "Tsuyuri", "Shinazugawa", "Tokito", "Kamado"}, function(choice)
+    clan = choice
+    print(clan)
+end)
+local dropdown_Race = tab_Features:Dropdown("Race", {"Human", "Demon", "Hybrid"}, function(choice)
+    if(choice == "Human") then
+        race = 1
+    elseif(choice == "Demon") then
+        race = 3
+    elseif(choice == "Hybrid") then
+        race = 4
+    end
+    print(choice.." - "..race)
+end)
+
+local label_Features1 = tab_Features:Label("--- DATA VALUES ---")
+
+local slider_Experience = tab_Features:Slider("Experience", 0, 15000, 7500, function(value)
+    experience = value
+    print(experience)
+end)
+local slider_Statpoints = tab_Features:Slider("Statpoints", 0, 10000, 5000, function(value)
+    statpoints = value
+    print(statpoints)
+end)
+local slider_Yen = tab_Features:Slider("Yen", 0, 20000, 10000, function(value)
+    yen = value
+    print(yen)
+end)
+
+local label_Features2 = tab_Features:Label("--- STAT CAPS ---")
+
+local slider_Agility = tab_Features:Slider("Agility Cap", 0, 100000, 50000, function(value)
+    agilityStat = value
+    print(agilityStat)
+end)
+
+local slider_Defense = tab_Features:Slider("Defense Cap", 0, 100000, 50000, function(value)
+    defenseStat = value
+    print(defenseStat)
+end)
+
+local manipulate_Button = tab_Features:Button("Manipulate", function()
+        --// Manipulation code
         local args = {
             [1] = {
                 ["Missions"] = {},
@@ -62,33 +88,33 @@ if(game.PlaceId == 6536671967 or game.PlaceId == 6536647319) then
                     ["Beli"] = yen,
                     ["Mastery"] = {
                         ["Demon Art"] = {
-                            [1] = 0,
+                            [1] = 150,
                             [2] = 0
                         },
                         ["Defense"] = {
-                            [1] = 0,
-                            [2] = 0
+                            [1] = defenseStat,
+                            [2] = defenseStat
                         },
                         ["Strength"] = {
-                            [1] = 0,
+                            [1] = 150,
                             [2] = 0
                         },
                         ["Sword"] = {
-                            [1] = 0,
+                            [1] = 150,
                             [2] = 0
                         },
                         ["Breathing Technique"] = {
-                            [1] = 0,
+                            [1] = 150,
                             [2] = 0
                         },
                         ["Agility"] = {
-                            [1] = 0,
-                            [2] = 0
+                            [1] = agilityStat,
+                            [2] = agilityStat
                         }
                     },
                     ["Exp"] = {
                         [1] = 0,
-                        [2] = level
+                        [2] = experience
                     }
                 },
                 ["Themes"] = true,
@@ -263,44 +289,10 @@ if(game.PlaceId == 6536671967 or game.PlaceId == 6536647319) then
             }
         }
 
-    game:GetService("ReplicatedStorage").ScriptCommunication.Set:FireServer(unpack(args))
-end)
-
-     --// On load
-    local themes = {
-        Background = Color3.fromRGB(24, 24, 24);
-        Glow = Color3.fromRGB(0, 0, 0);
-        Accent = Color3.fromRGB(10, 10, 10);
-        LightContrast = Color3.fromRGB(20, 20, 20);
-        DarkContrast = Color3.fromRGB(14, 14, 14);
-        TextColor = Color3.fromRGB(255, 255, 255);
-    }
-
-
-    local page_Theme = Hub:addPage("Settings", 5012544693)
-    local colors = page_Theme:addSection("UI Colors")
-    local keybinds = page_Theme:addSection("Toggle Keybind")
-
-    local credit = Hub:addPage("Credits", 5012544693)
-    local creds = credit:addSection("Credits")
-    local credits_1 = creds:addButton("Shaun.#8678")
-
-    for theme, color in pairs(themes) do
-        colors:addColorPicker(theme, color, function(color3)
-            Hub:setTheme(theme, color3)
-        end)
-    end
-
-    keybinds:addKeybind("UI Toggle", Enum.KeyCode.RightControl, function()
-        print("Keybind pressed");
-        Hub:toggle();
-    end, function()
-        print("Keybind changed");
+        game:GetService("ReplicatedStorage").ScriptCommunication.Set:FireServer(unpack(args))
     end)
-    Hub:SelectPage(Hub.pages[1], true)
+    --
 else
-    local Hub = UILibrary.new("#Packwatch Hub - Game not detected")
-    local noSupport = Hub:addPage("Features", 5012544693)
-    local support = noSupport:addSection("Game not supported!")
-    Hub:SelectPage(Hub.pages[1], true)
+    local player = game:GetService('Players').LocalPlayer
+    player:Kick("Game not supported")
 end
