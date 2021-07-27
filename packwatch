@@ -1,6 +1,5 @@
 --// Initialize
-
-local checkGame = function()
+if(game.PlaceId == 6536647319) then
     local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))();
     local Hub = UILibrary.new("#Packwatch Scripts - Slayers Unleashed", 5013109572);    
     local main = Hub:addPage("Features");
