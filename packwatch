@@ -263,7 +263,6 @@ if(game.PlaceId == 6536647319) then
 
         game:GetService("ReplicatedStorage").ScriptCommunication.Set:FireServer(unpack(args))
     end)
-end
 
 checkGame()
 
@@ -297,3 +296,4 @@ end)
 
 --// On load
 Hub:SelectPage(Hub.pages[1], true)
+end
