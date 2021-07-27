@@ -1,8 +1,9 @@
 --// Initialize
-    local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))();
-    local Hub = UILibrary.new("#Packwatch Scripts - Slayers Unleashed", 5013109572);    
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))();
 
-    --// Game
+--// Game Check
+if(game.PlaceId == 6536647319) then
+    local Hub = UILibrary.new("#Packwatch Hub - Slayers Unleashed", 5013109572);    
     local main = Hub:addPage("Features");
 
     local data_changer = main:addSection("Data Manipulation");
@@ -262,36 +263,46 @@
             }
         }
 
-        game:GetService("ReplicatedStorage").ScriptCommunication.Set:FireServer(unpack(args))
+    game:GetService("ReplicatedStorage").ScriptCommunication.Set:FireServer(unpack(args))
+    --// UI Themes
+    local themes = {
+        Background = Color3.fromRGB(24, 24, 24);
+        Glow = Color3.fromRGB(0, 0, 0);
+        Accent = Color3.fromRGB(10, 10, 10);
+        LightContrast = Color3.fromRGB(20, 20, 20);
+        DarkContrast = Color3.fromRGB(14, 14, 14);
+        TextColor = Color3.fromRGB(255, 255, 255);
+    }
+
+
+    local page_Theme = Hub:addPage("Settings", 5012544693)
+    local colors = page_Theme:addSection("UI Colors")
+    local keybinds = page_Theme:addSection("Toggle Keybind")
+
+    local credit = Hub:addPage("Credits", 5012544693)
+    local creds = credit:addSection("Credits")
+    local credits_1 = addButton("Shaun.#8678")
+
+    for theme, color in pairs(themes) do
+        colors:addColorPicker(theme, color, function(color3)
+            Hub:setTheme(theme, color3)
+        end)
+    end
+
+    keybinds:addKeybind("UI Toggle", Enum.KeyCode.RightControl, function()
+        print("Keybind pressed");
+        Hub:toggle();
+    end, function()
+        print("Keybind changed");
     end)
 
---// UI Themes
-local themes = {
-	Background = Color3.fromRGB(24, 24, 24);
-	Glow = Color3.fromRGB(0, 0, 0);
-	Accent = Color3.fromRGB(10, 10, 10);
-	LightContrast = Color3.fromRGB(20, 20, 20);
-	DarkContrast = Color3.fromRGB(14, 14, 14);
-	TextColor = Color3.fromRGB(255, 255, 255);
-}
-
-
-local page_Theme = Hub:addPage("Settings", 5012544693)
-local colors = page_Theme:addSection("UI Colors")
-local keybinds = page_Theme:addSection("Toggle Keybind")
-
-for theme, color in pairs(themes) do
-	colors:addColorPicker(theme, color, function(color3)
-		Hub:setTheme(theme, color3)
-	end)
-end
-
-keybinds:addKeybind("UI Toggle", Enum.KeyCode.RightControl, function()
-	print("Keybind pressed");
-	Hub:toggle();
-end, function()
-	print("Keybind changed");
-end)
-
---// On load
-Hub:SelectPage(Hub.pages[1], true)
+    --// On load
+    Hub:SelectPage(Hub.pages[1], true)
+    end)
+else
+    local Hub = UILibrary.new("#Packwatch Hub - Game not detected")
+    local Page = Hub:addPage("Features")
+    local Section = Page:addSection("Game is not supported!")
+    
+    Hub:SelectPage(Hub.pages[1], true)
+end 
