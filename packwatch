@@ -2,7 +2,7 @@
 local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))();
 
 --// Game Check
-if(game.PlaceId == 6536647319) then
+if(game.PlaceId == 6536647319 or game.PlaceId == 6536671967) then
 local venyx = library.new("Venyx", 5013109572)
 
 -- themes
@@ -63,4 +63,6 @@ end
 
 -- load
 venyx:SelectPage(venyx.pages[1], true)
+else
+print("too bad")
 end 
