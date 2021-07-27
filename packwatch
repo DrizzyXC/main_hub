@@ -298,4 +298,5 @@ if(game.PlaceId == 6536647319) then
         print("Keybind changed");
     end)
     Hub:SelectPage(Hub.pages[1], true)
+    end)
 end 
