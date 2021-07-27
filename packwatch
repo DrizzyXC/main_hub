@@ -63,6 +63,6 @@ end
 
 -- load
 venyx:SelectPage(venyx.pages[1], true)
-else
-print("too bad")
+  elseif(game.PlaceId == 7147531581) then
+    print("too bad")
 end 
