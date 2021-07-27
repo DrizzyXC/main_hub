@@ -266,6 +266,8 @@ local checkGame = function(
     end)
 ) end
 
+checkGame()
+
 --// UI Themes
 local themes = {
 	Background = Color3.fromRGB(24, 24, 24);
