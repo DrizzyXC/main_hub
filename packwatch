@@ -1,23 +1,11 @@
 --// Initialize
 local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))();
-local game_Detected
+local Hub = UILibrary.new("#Packwatch Hub - "..game.Name, 5013109572);
 
 --// Check Game
 getgenv().checkGame = function()
 	if (game.PlaceId == 6536647319) then
-		game_Detected = "Slayers Unleashed";
-		print(game_Detected);
-	elseif(game.PlaceId == 7147531581) then
-		game_Detected = "Testing Place";
-		print(game_Detected);
-	end
-end
-
-checkGame();
-
-local Hub = UILibrary.new("#Packwatch Hub - "..game_Detected, 5013109572);
-
---// Game Functions
+	--// Game Functions
 local main = Hub:addPage("Features");
 
 local data_changer = main:addSection("Data Manipulation");
@@ -279,6 +267,13 @@ data_changer:addButton("Manipulate", function()
 
 	game:GetService("ReplicatedStorage").ScriptCommunication.Set:FireServer(unpack(args))
 end)
+
+	elseif(game.PlaceId == 7147531581) then
+		print("not game")
+	end
+end
+
+checkGame();
 
 --// UI Themes
 local themes = {
