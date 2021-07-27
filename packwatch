@@ -299,5 +299,6 @@ if(game.PlaceId == 6536647319) then
     end)
     Hub:SelectPage(Hub.pages[1], true)
    else
+   local ui = UILibrary.new("yes")
     print("fuck off")
 end 
