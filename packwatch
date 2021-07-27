@@ -1,6 +1,6 @@
 --// Initialize
 local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))();
-local Hub = UILibrary.new("#Packwatch Hub - "..game.Name, 5013109572);
+local Hub = UILibrary.new("#Packwatch Hub - "..game.PlaceId.Name, 5013109572);
 
 --// Check Game
 getgenv().checkGame = function()
