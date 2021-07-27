@@ -65,12 +65,12 @@ end)
 
 local label_Features2 = tab_Features:Label("--- STAT CAPS ---")
 
-local slider_Agility = tab_Features:Textbox("Agility Stat", function(value)
+local slider_Agility = tab_Features:Textbox("Agility Stat", "text", function(value)
     agilityStat = value
     print(agilityStat)
 end)
 
-local slider_Defense = tab_Features:Textbox("Defense Stat", function(value)
+local slider_Defense = tab_Features:Textbox("Defense Stat", "text", function(value)
     defenseStat = value
     print(defenseStat)
 end)
