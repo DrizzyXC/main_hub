@@ -64,5 +64,5 @@ end
 -- load
 venyx:SelectPage(venyx.pages[1], true)
   elseif(game.PlaceId == 7147531581) then
-    print("too bad")
+    return end
 end 
