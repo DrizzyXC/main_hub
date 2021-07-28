@@ -1,0 +1,76 @@
+    local VLib = loadstring(game:HttpGet("https://pastebin.com/raw/i5bmyXNi"))()
+    local Main = VLib:Window("Demonfall - #Packwatch Hub")
+
+    local tab_Features = Main:Tab("Main Functions")
+    local tab_Credits = Main:Tab("Recognition")
+
+    local trinketFarm = tab_Features:Button("Trinket Autofarm", function()
+    local player = game:GetService("Players").LocalPlayer
+    local breathing = player.Breathing
+    local trinkets = game:GetService("Workspace").Trinkets:GetChildren()
+    
+    if _G.canTeleport == nil then _G.canTeleport = false end
+    
+    function newTeleport()
+        if _G.canTeleport == false then
+            _G.canTeleport = true
+            game:GetService("ReplicatedStorage").Remotes.Sync:InvokeServer("Player", "SpawnCharacter")
+            
+            delay(8, function()
+                _G.canTeleport = false
+            end)
+            return wait(2.5)
+        else
+            return wait(1.25)
+        end
+    end
+    
+    
+    while wait(2.5) do
+        newTeleport()
+        local trinket = trinkets[math.random(1, #trinkets)]
+        player.Character.HumanoidRootPart.CFrame = trinket.CFrame
+        end
+    end)
+
+    local isBreathing = false
+    _G.cooldown = .45
+    _G.check = false
+    
+    local function spamBreathing()
+        game.ReplicatedStorage.Remotes.Async:FireServer("Character", "Breath", true)
+    end;
+    local function haltBreathing()
+        game.ReplicatedStorage.Remotes.Async:FireServer("Character", "Breath", false)
+    end
+    
+    coroutine.wrap(function()
+        while true do
+            if breathing.Value >= 95 and _G.check == false then
+                isBreathing = false
+                haltBreathing()
+            elseif _G.check == true and isBreathing == false then
+                isBreathing = true
+                spamBreathing()
+            end
+            wait(_G.cooldown)
+        end
+    end)()
+        
+    local autoBreathe = tab_Features:Toggle("Auto Breathe", function(value)
+        _G.check = value
+    end)
+    
+    breathing.Changed:Connect(function(newValue)
+        if newValue < 100 and newValue > 85 then
+            _G.cooldown = .5    
+        elseif newValue < 80 then 
+            _G.cooldown = 0.005  
+        end
+    end)
+    
+    local title1 = tab_Credits:Label("--- CREDITS ---")
+    local person2 = tab_Credits:Label("Shaun.#8678")
+    local cord3 = tab_Credits:Button("Discord -> discord.gg/Y8bCbsVjR9", function()
+        setclipboard("Y8bCbsVjR9")
+    end)
