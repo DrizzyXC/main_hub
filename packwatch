@@ -1,8 +1,0 @@
-if(game.PlaceId == 6536671967 or game.PlaceId == 6536647319) then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DrizzyXC/main_hub/main/slayerunleash"))()
-elseif(game.PlaceId == 5094651510) then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DrizzyXC/main_hub/main/demonfall"))()
-else
-    local player = game:GetService('Players').LocalPlayer
-    player:Kick("Game not supported")
-end
