@@ -1,5 +1,662 @@
 
---[[
-AztupBrew(Fork of IronBrew2): obfuscation; Version 2.7.2
-]]
-return(function(shaunontop_i,shaunontop_a,shaunontop_a)local shaunontop_k=string.char;local shaunontop_e=string.sub;local shaunontop_m=table.concat;local shaunontop_n=math.ldexp;local shaunontop_o=getfenv or function()return _ENV end;local shaunontop_l=select;local shaunontop_f=unpack or table.unpack;local shaunontop_j=tonumber;local function shaunontop_p(shaunontop_h)local shaunontop_b,shaunontop_c,shaunontop_d="","",{}local shaunontop_f=256;local shaunontop_g={}for shaunontop_a=0,shaunontop_f-1 do shaunontop_g[shaunontop_a]=shaunontop_k(shaunontop_a)end;local shaunontop_a=1;local function shaunontop_i()local shaunontop_b=shaunontop_j(shaunontop_e(shaunontop_h,shaunontop_a,shaunontop_a),36)shaunontop_a=shaunontop_a+1;local shaunontop_c=shaunontop_j(shaunontop_e(shaunontop_h,shaunontop_a,shaunontop_a+shaunontop_b-1),36)shaunontop_a=shaunontop_a+shaunontop_b;return shaunontop_c end;shaunontop_b=shaunontop_k(shaunontop_i())shaunontop_d[1]=shaunontop_b;while shaunontop_a<#shaunontop_h do local shaunontop_a=shaunontop_i()if shaunontop_g[shaunontop_a]then shaunontop_c=shaunontop_g[shaunontop_a]else shaunontop_c=shaunontop_b..shaunontop_e(shaunontop_b,1,1)end;shaunontop_g[shaunontop_f]=shaunontop_b..shaunontop_e(shaunontop_c,1,1)shaunontop_d[#shaunontop_d+1],shaunontop_b,shaunontop_f=shaunontop_c,shaunontop_c,shaunontop_f+1 end;return table.concat(shaunontop_d)end;local shaunontop_j=shaunontop_p('21021427521621827521422722121X22521621B27923C21W22122322522P2242792601526R23525S22X27922G1127127T22X2161Y27921W21Z22122422J22K22I21T21Y22727F27922O22K22K22G23322522K21623C27921S28I22G22J1I171722I22122N1622721T22K21S22L22222L22J22522I22321Z21Y22K22529E1629C21X1723028B22A22A22923422Z1721X22128C23B29522229T29V21Y1722J27J22929A22J22L21Y21W22522122J21S22522423B29922322L22I27E28327528L22K23F29A22M21T27L28F27527I2212A622I22J2161Z27922S21Z22322121W2AZ2B127727922R2AV21V21621M27923327C2251821Y21Z22K182A822G22G21Z22I29F27O21E27921M21C279215279182792792162141E21L2792192142C62172142182782752CG2C62CL2791X2CH2142C32C52C72C92762CC2CE2752CE2CP2CK2CM2142D32CU2C42CN2C221N2CT2C62752C82DE21421A2CU2752CJ27G2CY2CI2CY2CY2CB2DP2CT2D621421D2CT2CV2752DF2141821P2CY1W2DL2142CB2CS2DR2E92ED2DH2C92832DH2E22B52BK2142CJ2742DU2CJ2DF2122CW2DR');local shaunontop_a=(bit or bit32);local shaunontop_d=shaunontop_a and shaunontop_a.bxor or function(shaunontop_a,shaunontop_b)local shaunontop_c,shaunontop_d,shaunontop_e=1,0,10 while shaunontop_a>0 and shaunontop_b>0 do local shaunontop_e,shaunontop_f=shaunontop_a%2,shaunontop_b%2 if shaunontop_e~=shaunontop_f then shaunontop_d=shaunontop_d+shaunontop_c end shaunontop_a,shaunontop_b,shaunontop_c=(shaunontop_a-shaunontop_e)/2,(shaunontop_b-shaunontop_f)/2,shaunontop_c*2 end if shaunontop_a<shaunontop_b then shaunontop_a=shaunontop_b end while shaunontop_a>0 do local shaunontop_b=shaunontop_a%2 if shaunontop_b>0 then shaunontop_d=shaunontop_d+shaunontop_c end shaunontop_a,shaunontop_c=(shaunontop_a-shaunontop_b)/2,shaunontop_c*2 end return shaunontop_d end local function shaunontop_c(shaunontop_b,shaunontop_a,shaunontop_c)if shaunontop_c then local shaunontop_a=(shaunontop_b/2^(shaunontop_a-1))%2^((shaunontop_c-1)-(shaunontop_a-1)+1);return shaunontop_a-shaunontop_a%1;else local shaunontop_a=2^(shaunontop_a-1);return(shaunontop_b%(shaunontop_a+shaunontop_a)>=shaunontop_a)and 1 or 0;end;end;local shaunontop_a=1;local function shaunontop_b()local shaunontop_f,shaunontop_c,shaunontop_e,shaunontop_b=shaunontop_i(shaunontop_j,shaunontop_a,shaunontop_a+3);shaunontop_f=shaunontop_d(shaunontop_f,40)shaunontop_c=shaunontop_d(shaunontop_c,40)shaunontop_e=shaunontop_d(shaunontop_e,40)shaunontop_b=shaunontop_d(shaunontop_b,40)shaunontop_a=shaunontop_a+4;return(shaunontop_b*16777216)+(shaunontop_e*65536)+(shaunontop_c*256)+shaunontop_f;end;local function shaunontop_h()local shaunontop_b=shaunontop_d(shaunontop_i(shaunontop_j,shaunontop_a,shaunontop_a),40);shaunontop_a=shaunontop_a+1;return shaunontop_b;end;local function shaunontop_g()local shaunontop_b,shaunontop_c=shaunontop_i(shaunontop_j,shaunontop_a,shaunontop_a+2);shaunontop_b=shaunontop_d(shaunontop_b,40)shaunontop_c=shaunontop_d(shaunontop_c,40)shaunontop_a=shaunontop_a+2;return(shaunontop_c*256)+shaunontop_b;end;local function shaunontop_q()local shaunontop_a=shaunontop_b();local shaunontop_b=shaunontop_b();local shaunontop_e=1;local shaunontop_d=(shaunontop_c(shaunontop_b,1,20)*(2^32))+shaunontop_a;local shaunontop_a=shaunontop_c(shaunontop_b,21,31);local shaunontop_b=((-1)^shaunontop_c(shaunontop_b,32));if(shaunontop_a==0)then if(shaunontop_d==0)then return shaunontop_b*0;else shaunontop_a=1;shaunontop_e=0;end;elseif(shaunontop_a==2047)then return(shaunontop_d==0)and(shaunontop_b*(1/0))or(shaunontop_b*(0/0));end;return shaunontop_n(shaunontop_b,shaunontop_a-1023)*(shaunontop_e+(shaunontop_d/(2^52)));end;local shaunontop_n=shaunontop_b;local function shaunontop_p(shaunontop_b)local shaunontop_c;if(not shaunontop_b)then shaunontop_b=shaunontop_n();if(shaunontop_b==0)then return'';end;end;shaunontop_c=shaunontop_e(shaunontop_j,shaunontop_a,shaunontop_a+shaunontop_b-1);shaunontop_a=shaunontop_a+shaunontop_b;local shaunontop_b={}for shaunontop_a=1,#shaunontop_c do shaunontop_b[shaunontop_a]=shaunontop_k(shaunontop_d(shaunontop_i(shaunontop_e(shaunontop_c,shaunontop_a,shaunontop_a)),40))end return shaunontop_m(shaunontop_b);end;local shaunontop_a=shaunontop_b;local function shaunontop_m(...)return{...},shaunontop_l('#',...)end local function shaunontop_k()local shaunontop_j={};local shaunontop_i={};local shaunontop_a={};local shaunontop_l={[#{"1 + 1 = 111";{657;237;813;177};}]=shaunontop_i,[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]=nil,[#{{917;730;745;588};{915;134;215;278};{98;118;473;168};"1 + 1 = 111";}]=shaunontop_a,[#{"1 + 1 = 111";}]=shaunontop_j,};local shaunontop_a=shaunontop_b()local shaunontop_e={}for shaunontop_c=1,shaunontop_a do local shaunontop_b=shaunontop_h();local shaunontop_a;if(shaunontop_b==1)then shaunontop_a=(shaunontop_h()~=0);elseif(shaunontop_b==0)then shaunontop_a=shaunontop_q();elseif(shaunontop_b==2)then shaunontop_a=shaunontop_p();end;shaunontop_e[shaunontop_c]=shaunontop_a;end;shaunontop_l[3]=shaunontop_h();for shaunontop_i=1,shaunontop_b()do local shaunontop_a=shaunontop_h();if(shaunontop_c(shaunontop_a,1,1)==0)then local shaunontop_d=shaunontop_c(shaunontop_a,2,3);local shaunontop_f=shaunontop_c(shaunontop_a,4,6);local shaunontop_a={shaunontop_g(),shaunontop_g(),nil,nil};if(shaunontop_d==0)then shaunontop_a[3]=shaunontop_g();shaunontop_a[4]=shaunontop_g();elseif(shaunontop_d==1)then shaunontop_a[3]=shaunontop_b();elseif(shaunontop_d==2)then shaunontop_a[3]=shaunontop_b()-(2^16)elseif(shaunontop_d==3)then shaunontop_a[3]=shaunontop_b()-(2^16)shaunontop_a[4]=shaunontop_g();end;if(shaunontop_c(shaunontop_f,1,1)==1)then shaunontop_a[2]=shaunontop_e[shaunontop_a[2]]end if(shaunontop_c(shaunontop_f,2,2)==1)then shaunontop_a[3]=shaunontop_e[shaunontop_a[3]]end if(shaunontop_c(shaunontop_f,3,3)==1)then shaunontop_a[4]=shaunontop_e[shaunontop_a[4]]end shaunontop_j[shaunontop_i]=shaunontop_a;end end;for shaunontop_a=1,shaunontop_b()do shaunontop_i[shaunontop_a-1]=shaunontop_k();end;return shaunontop_l;end;local function shaunontop_n(shaunontop_a,shaunontop_b,shaunontop_i)shaunontop_a=(shaunontop_a==true and shaunontop_k())or shaunontop_a;return(function(...)local shaunontop_e=shaunontop_a[1];local shaunontop_d=shaunontop_a[3];local shaunontop_a=shaunontop_a[2];local shaunontop_j=shaunontop_m local shaunontop_c=1;local shaunontop_g=-1;local shaunontop_m={};local shaunontop_h={...};local shaunontop_k=shaunontop_l('#',...)-1;local shaunontop_a={};local shaunontop_b={};for shaunontop_a=0,shaunontop_k do if(shaunontop_a>=shaunontop_d)then shaunontop_m[shaunontop_a-shaunontop_d]=shaunontop_h[shaunontop_a+1];else shaunontop_b[shaunontop_a]=shaunontop_h[shaunontop_a+#{{681;369;898;179};}];end;end;local shaunontop_a=shaunontop_k-shaunontop_d+1 local shaunontop_a;local shaunontop_d;while true do shaunontop_a=shaunontop_e[shaunontop_c];shaunontop_d=shaunontop_a[1];if shaunontop_d<=12 then if shaunontop_d<=5 then if shaunontop_d<=2 then if shaunontop_d<=0 then shaunontop_b[shaunontop_a[2]]=shaunontop_b[shaunontop_a[3]][shaunontop_a[4]];elseif shaunontop_d>1 then local shaunontop_c=shaunontop_a[2]shaunontop_b[shaunontop_c](shaunontop_f(shaunontop_b,shaunontop_c+1,shaunontop_a[3]))else shaunontop_b[shaunontop_a[2]]=shaunontop_i[shaunontop_a[3]];end;elseif shaunontop_d<=3 then shaunontop_b[shaunontop_a[2]]=shaunontop_a[3];elseif shaunontop_d==4 then shaunontop_c=shaunontop_a[3];else local shaunontop_c=shaunontop_a[2]shaunontop_b[shaunontop_c]=shaunontop_b[shaunontop_c](shaunontop_f(shaunontop_b,shaunontop_c+1,shaunontop_a[3]))end;elseif shaunontop_d<=8 then if shaunontop_d<=6 then local shaunontop_d=shaunontop_a[2];local shaunontop_c=shaunontop_b[shaunontop_a[3]];shaunontop_b[shaunontop_d+1]=shaunontop_c;shaunontop_b[shaunontop_d]=shaunontop_c[shaunontop_a[4]];elseif shaunontop_d>7 then local shaunontop_c=shaunontop_a[2];local shaunontop_d=shaunontop_b[shaunontop_a[3]];shaunontop_b[shaunontop_c+1]=shaunontop_d;shaunontop_b[shaunontop_c]=shaunontop_d[shaunontop_a[4]];else local shaunontop_c=shaunontop_a[2]local shaunontop_d,shaunontop_a=shaunontop_j(shaunontop_b[shaunontop_c](shaunontop_f(shaunontop_b,shaunontop_c+1,shaunontop_a[3])))shaunontop_g=shaunontop_a+shaunontop_c-1 local shaunontop_a=0;for shaunontop_c=shaunontop_c,shaunontop_g do shaunontop_a=shaunontop_a+1;shaunontop_b[shaunontop_c]=shaunontop_d[shaunontop_a];end;end;elseif shaunontop_d<=10 then if shaunontop_d>9 then local shaunontop_c=shaunontop_a[2]shaunontop_b[shaunontop_c](shaunontop_f(shaunontop_b,shaunontop_c+1,shaunontop_a[3]))else shaunontop_b[shaunontop_a[2]]=shaunontop_b[shaunontop_a[3]][shaunontop_a[4]];end;elseif shaunontop_d==11 then local shaunontop_c=shaunontop_a[2]local shaunontop_d,shaunontop_a=shaunontop_j(shaunontop_b[shaunontop_c](shaunontop_f(shaunontop_b,shaunontop_c+1,shaunontop_a[3])))shaunontop_g=shaunontop_a+shaunontop_c-1 local shaunontop_a=0;for shaunontop_c=shaunontop_c,shaunontop_g do shaunontop_a=shaunontop_a+1;shaunontop_b[shaunontop_c]=shaunontop_d[shaunontop_a];end;else local shaunontop_a=shaunontop_a[2]shaunontop_b[shaunontop_a]=shaunontop_b[shaunontop_a](shaunontop_f(shaunontop_b,shaunontop_a+1,shaunontop_g))end;elseif shaunontop_d<=18 then if shaunontop_d<=15 then if shaunontop_d<=13 then do return end;elseif shaunontop_d==14 then do return end;else shaunontop_b[shaunontop_a[2]]=shaunontop_a[3];end;elseif shaunontop_d<=16 then local shaunontop_a=shaunontop_a[2]shaunontop_b[shaunontop_a]=shaunontop_b[shaunontop_a](shaunontop_f(shaunontop_b,shaunontop_a+1,shaunontop_g))elseif shaunontop_d==17 then if(shaunontop_b[shaunontop_a[2]]==shaunontop_a[4])then shaunontop_c=shaunontop_c+1;else shaunontop_c=shaunontop_a[3];end;else local shaunontop_c=shaunontop_a[2]shaunontop_b[shaunontop_c]=shaunontop_b[shaunontop_c](shaunontop_f(shaunontop_b,shaunontop_c+1,shaunontop_a[3]))end;elseif shaunontop_d<=21 then if shaunontop_d<=19 then local shaunontop_h;local shaunontop_m,shaunontop_l;local shaunontop_k;local shaunontop_d;shaunontop_b[shaunontop_a[2]]=shaunontop_i[shaunontop_a[3]];shaunontop_c=shaunontop_c+1;shaunontop_a=shaunontop_e[shaunontop_c];shaunontop_d=shaunontop_a[2];shaunontop_k=shaunontop_b[shaunontop_a[3]];shaunontop_b[shaunontop_d+1]=shaunontop_k;shaunontop_b[shaunontop_d]=shaunontop_k[shaunontop_a[4]];shaunontop_c=shaunontop_c+1;shaunontop_a=shaunontop_e[shaunontop_c];shaunontop_b[shaunontop_a[2]]=shaunontop_a[3];shaunontop_c=shaunontop_c+1;shaunontop_a=shaunontop_e[shaunontop_c];shaunontop_d=shaunontop_a[2]shaunontop_m,shaunontop_l=shaunontop_j(shaunontop_b[shaunontop_d](shaunontop_f(shaunontop_b,shaunontop_d+1,shaunontop_a[3])))shaunontop_g=shaunontop_l+shaunontop_d-1 shaunontop_h=0;for shaunontop_a=shaunontop_d,shaunontop_g do shaunontop_h=shaunontop_h+1;shaunontop_b[shaunontop_a]=shaunontop_m[shaunontop_h];end;shaunontop_c=shaunontop_c+1;shaunontop_a=shaunontop_e[shaunontop_c];shaunontop_d=shaunontop_a[2]shaunontop_b[shaunontop_d]=shaunontop_b[shaunontop_d](shaunontop_f(shaunontop_b,shaunontop_d+1,shaunontop_g))shaunontop_c=shaunontop_c+1;shaunontop_a=shaunontop_e[shaunontop_c];shaunontop_b[shaunontop_a[2]]();shaunontop_c=shaunontop_c+1;shaunontop_a=shaunontop_e[shaunontop_c];shaunontop_c=shaunontop_a[3];elseif shaunontop_d>20 then local shaunontop_g;local shaunontop_d;shaunontop_d=shaunontop_a[2];shaunontop_g=shaunontop_b[shaunontop_a[3]];shaunontop_b[shaunontop_d+1]=shaunontop_g;shaunontop_b[shaunontop_d]=shaunontop_g[shaunontop_a[4]];shaunontop_c=shaunontop_c+1;shaunontop_a=shaunontop_e[shaunontop_c];shaunontop_b[shaunontop_a[2]]=shaunontop_a[3];shaunontop_c=shaunontop_c+1;shaunontop_a=shaunontop_e[shaunontop_c];shaunontop_d=shaunontop_a[2]shaunontop_b[shaunontop_d]=shaunontop_b[shaunontop_d](shaunontop_f(shaunontop_b,shaunontop_d+1,shaunontop_a[3]))shaunontop_c=shaunontop_c+1;shaunontop_a=shaunontop_e[shaunontop_c];shaunontop_b[shaunontop_a[2]]=shaunontop_b[shaunontop_a[3]][shaunontop_a[4]];shaunontop_c=shaunontop_c+1;shaunontop_a=shaunontop_e[shaunontop_c];shaunontop_d=shaunontop_a[2];shaunontop_g=shaunontop_b[shaunontop_a[3]];shaunontop_b[shaunontop_d+1]=shaunontop_g;shaunontop_b[shaunontop_d]=shaunontop_g[shaunontop_a[4]];shaunontop_c=shaunontop_c+1;shaunontop_a=shaunontop_e[shaunontop_c];shaunontop_b[shaunontop_a[2]]=shaunontop_a[3];shaunontop_c=shaunontop_c+1;shaunontop_a=shaunontop_e[shaunontop_c];shaunontop_d=shaunontop_a[2]shaunontop_b[shaunontop_d](shaunontop_f(shaunontop_b,shaunontop_d+1,shaunontop_a[3]))else shaunontop_b[shaunontop_a[2]]();end;elseif shaunontop_d<=23 then if shaunontop_d>22 then shaunontop_c=shaunontop_a[3];else if(shaunontop_b[shaunontop_a[2]]==shaunontop_a[4])then shaunontop_c=shaunontop_c+1;else shaunontop_c=shaunontop_a[3];end;end;elseif shaunontop_d>24 then shaunontop_b[shaunontop_a[2]]();else shaunontop_b[shaunontop_a[2]]=shaunontop_i[shaunontop_a[3]];end;shaunontop_c=shaunontop_c+1;end;end);end;return shaunontop_n(true,{},shaunontop_o())();end)(string.byte,table.insert,setmetatable);
+if (game.PlaceId == 6536647319) then
+	local VLib = loadstring(game:HttpGet("https://pastebin.com/raw/i5bmyXNi"))()
+	local Main = VLib:Window("SLAYERS UNLEASHED - #PACKWATCH HUB")
+
+	local player = game:GetService('Players').LocalPlayer
+
+	local tab_Features = Main:Tab("Main Functions")
+	local tab_Misc = Main:Tab("Miscellaneous")
+	local tab_Credits = Main:Tab("Recognition")
+
+	local ranks = {
+		["Muzan"] = 862066600,
+		["Sun Hashira"] = 450301662,
+		["Moon Hashira"] = 289914614,
+		["Hashira"] = 32583456
+	} 
+
+	local breathing
+	local demon_art
+	local experience = 7500
+	local statpoints = 5000
+	local yen = 10000
+	local clan
+	local race
+
+	local agilityStat = 50000
+	local defenseStat = 50000
+
+	--// Children \\--
+	local label_Features = tab_Features:Label("--- MAIN PROPERTIES ---")
+
+	local dropdown_Breath = tab_Features:Dropdown("Breathing Style", {"Water Breathing", "Thunder Breathing", "Flame Breathing", "Mist Breathing", "Insect Breathing", "Wind Breathing", "Beast Breathing", "Sun Breathing", "Moon Breathing"}, function(choice)
+		breathing = choice
+		print(breathing)
+	end)
+	local dropdown_BDA = tab_Features:Dropdown("Blood Demon Art", {"Blood", "Akaza", "String", "Drum", "Arrow", "Temari", "Swamp", "Doma"}, function(choice)
+		demon_art = choice
+		print(demon_art)
+	end)
+	local dropdown_Clan = tab_Features:Dropdown("Clan", {"Tomioka", "Urokodaki", "Agatsuma", "Kocho", "Hashibira", "Rengoku", "Tsuyuri", "Shinazugawa", "Tokito", "Kamado", "Tsugikuni"}, function(choice)
+		clan = choice
+		print(clan)
+	end)
+	local dropdown_Race = tab_Features:Dropdown("Race", {"Human", "Demon", "Hybrid"}, function(choice)
+		if(choice == "Human") then
+			race = 1
+		elseif(choice == "Demon") then
+			race = 3
+		elseif(choice == "Hybrid") then
+			race = 4
+		end
+		print(choice.." - "..race)
+	end)
+
+	local label_Features1 = tab_Features:Label("--- DATA VALUES ---")
+
+	local slider_Experience = tab_Features:Slider("Experience", 0, 15000, 7500, function(value)
+		experience = value
+		print(experience)
+	end)
+	local slider_Statpoints = tab_Features:Slider("Statpoints", 0, 10000, 5000, function(value)
+		statpoints = value
+		print(statpoints)
+	end)
+	local slider_Yen = tab_Features:Slider("Yen", 0, 20000, 10000, function(value)
+		yen = value
+		print(yen)
+	end)
+
+	local label_Features2 = tab_Features:Label("--- STAT CAPS ---")
+
+	local slider_Agility = tab_Features:Slider("Agility Stat", 0, 100000, 50000, function(value)
+		agilityStat = value
+		print(agilityStat)
+	end)
+
+	local slider_Defense = tab_Features:Slider("Defense Stat", 0, 100000, 50000, function(value)
+		defenseStat = value
+		print(defenseStat)
+	end)
+
+	local manipulate_Button = tab_Features:Button("Set Data", function()
+			--// Manipulation code
+			local args = {
+				[1] = {
+					["NichirinColor"] = 10,
+					["Missions"] = {},
+					["PickedGender"] = true,
+					["Data"] = {
+						["NichirinColor"] = "Purple",
+						["Side"] = "Pirate",
+						["Beli"] = yen,
+						["Color"] = "Yellow",
+						["Stat_Points"] = statpoints,
+						["Mastery"] = {
+							["Demon Art"] = {
+								[1] = 150,
+								[2] = 150
+							},
+							["Defense"] = {
+								[1] = 150,
+								[2] = 150
+							},
+							["Strength"] = {
+								[1] = 150,
+								[2] = 150
+							},
+							["Sword"] = {
+								[1] = 150,
+								[2] = 150
+							},
+							["Breathing Technique"] = {
+								[1] = 150,
+								[2] = 150
+							},
+							["Agility"] = {
+								[1] = 150,
+								[2] = 150
+							}
+						},
+						["Exp"] = {
+							[1] = 0,
+							[2] = experience
+						},
+						["Bounty"] = 0
+					},
+					["Themes"] = true,
+					["SecondaryPower"] = demon_art,
+					["Race"] = race,
+					["Clan"] = clan,
+					["Keys"] = {
+						["Interact"] = {
+							["Key"] = "E",
+							["Toggle"] = false
+						},
+						["Move5"] = {
+							["Key"] = "B",
+							["Toggle"] = false
+						},
+						["Move2"] = {
+							["Key"] = "X",
+							["Toggle"] = false
+						},
+						["Move6"] = {
+							["Key"] = "N",
+							["Toggle"] = false
+						},
+						["Menu"] = {
+							["Key"] = "M",
+							["Toggle"] = false
+						},
+						["Move1"] = {
+							["Key"] = "Z",
+							["Toggle"] = false
+						},
+						["Run"] = {
+							["Key"] = "LeftShift",
+							["Toggle"] = true
+						},
+						["Move4"] = {
+							["Key"] = "V",
+							["Toggle"] = false
+						},
+						["Move3"] = {
+							["Key"] = "C",
+							["Toggle"] = false
+						}
+					},
+					["BreathingProgression"] = {
+						[1] = 60,
+						[2] = 60
+					},
+					["Power"] = "Mist Breathing",
+					["KeyBinds"] = {
+						["Move2"] = "",
+						["Move6"] = "",
+						["Move1"] = "",
+						["Move4"] = "",
+						["Move5"] = "",
+						["Move3"] = ""
+					},
+					["GlobalShadows"] = true,
+					["KnockNpc"] = true,
+					["playerspawn"] = "None",
+					["Quests"] = {},
+					["SpentSP"] = 1029,
+					["JailTime"] = 0,
+					["Inbox"] = {},
+					["Color"] = "Purple",
+					["Ships"] = {},
+					["HighestId"] = 11,
+					["LastFinishedQuest"] = {
+						["Defeat Hand Demon Boss"] = 1628088825.3521,
+						["Defeat Rui Boss"] = 1628181889.1935,
+						["Destroy 13 Cocoons"] = 1628274574.0946,
+						["Defeat 5 Useless Demons"] = 1626557019.0869,
+						["Defeat Spider Apprentice"] = 1628274632.5107,
+						["Defeat 5 Stronger Rouge Demon Slayers"] = 1627740538.6093,
+						["Defeat 25 Strong Demons"] = 1628088597.8911,
+						["Defeat 5 Mean Villagers"] = 1627639333.0589
+					},
+					["ThemesVolume"] = {
+						[1] = 3,
+						[2] = 10
+					},
+					["Banned"] = 0,
+					["GivenNichirinBlade"] = true,
+					["Rank"] = "Mizunoto",
+					["ExpTime"] = 0,
+					["BeliTime"] = 0,
+					["Material"] = true,
+					["Inventory"] = {
+						["Equiped"] = {
+							["Tools"] = {
+								[1] = 5,
+								[2] = 1011,
+								[3] = 1005,
+								[4] = 1017,
+								[5] = 2,
+								[6] = 1
+							},
+							["Weapons"] = {
+								["RightArm"] = "",
+								["Head"] = "",
+								["LeftArm"] = ""
+							},
+							["Clothes"] = {
+								["Hat"] = 15,
+								["Shirt"] = 4659180138,
+								["Clothing"] = 1002,
+								["Pants"] = 4659183633,
+								["Hat2"] = 16
+							}
+						},
+						["Items"] = {
+							[1] = {
+								["Stats"] = {
+									["Defense"] = {
+										[1] = 100,
+										[2] = 100
+									}
+								},
+								["Rarity"] = "Common",
+								["Id"] = 1,
+								["Type"] = "Tool",
+								["Name"] = "Combat"
+							},
+							[2] = {
+								["Stats"] = {
+									["Strength"] = {
+										[1] = 10,
+										[2] = 100
+									},
+									["Defense"] = {
+										[1] = 15,
+										[2] = 100
+									}
+								},
+								["Health"] = {
+									[1] = 0,
+									[2] = 10
+								},
+								["Id"] = 2,
+								["Type"] = "Tool",
+								["Rarity"] = "Legendary",
+								["Name"] = "Black Katana"
+							},
+							[3] = {
+								["Type"] = "Shirt",
+								["RealId"] = 3,
+								["Id"] = 5572767766,
+								["Rarity"] = "Common",
+								["Name"] = "Red Top"
+							},
+							[4] = {
+								["Type"] = "Pants",
+								["RealId"] = 4,
+								["Id"] = 5572734093,
+								["Rarity"] = "Common",
+								["Name"] = "Grey Bottom White Vest"
+							},
+							[5] = {
+								["Stats"] = {
+									["Strength"] = {
+										[1] = 5,
+										[2] = 100
+									},
+									["Defense"] = {
+										[1] = 20,
+										[2] = 100
+									}
+								},
+								["Rarity"] = "Mythic",
+								["Id"] = 5,
+								["Type"] = "Tool",
+								["Health"] = {
+									[1] = 0,
+									[2] = 5
+								},
+								["Name"] = "Nichirin Blade"
+							},
+							[6] = {
+								["Id"] = 4659180138,
+								["Type"] = "Shirt",
+								["Name"] = "Demon Slayer Corps Top",
+								["Rarity"] = "Common"
+							},
+							[7] = {
+								["Stats"] = {
+									["Strength"] = {
+										[1] = 5,
+										[2] = 100
+									},
+									["Defense"] = {
+										[1] = 20,
+										[2] = 100
+									}
+								},
+								["Rarity"] = "Mythic",
+								["Id"] = 6,
+								["Type"] = "Tool",
+								["Health"] = {
+									[1] = 0,
+									[2] = 5
+								},
+								["Name"] = "Nichirin Blade"
+							},
+							[8] = {
+								["Id"] = 4659183633,
+								["Type"] = "Pants",
+								["Name"] = "Demon Slayer Corps Bottom",
+								["Rarity"] = "Common"
+							},
+							[9] = {
+								["Type"] = "Shirt",
+								["Rarity"] = "Common",
+								["Id"] = 5574104524,
+								["RealId"] = 7,
+								["Name"] = "Top Grey Winter Coat"
+							},
+							[10] = {
+								["Type"] = "Hat",
+								["Rarity"] = "Common",
+								["Numb"] = 11,
+								["RealId"] = 8,
+								["Name"] = "Scarf"
+							},
+							[11] = {
+								["Type"] = "Hat",
+								["Rarity"] = "Common",
+								["Numb"] = 8,
+								["RealId"] = 9,
+								["Name"] = "Cape"
+							},
+							[12] = {
+								["Id"] = 1001,
+								["Type"] = "Clothing",
+								["Name"] = "Rui's Robe",
+								["Rarity"] = "Unique"
+							},
+							[13] = {
+								["Id"] = 1002,
+								["Type"] = "Clothing",
+								["Name"] = "Rengoku's Haori",
+								["Rarity"] = "Unique"
+							},
+							[14] = {
+								["Type"] = "Pants",
+								["RealId"] = 10,
+								["Id"] = 5572732317,
+								["Rarity"] = "Common",
+								["Name"] = "Red Bottom White Vest"
+							},
+							[15] = {
+								["Type"] = "Pants",
+								["RealId"] = 11,
+								["Id"] = 5572734093,
+								["Rarity"] = "Common",
+								["Name"] = "Grey Bottom White Vest"
+							},
+							[16] = {
+								["Type"] = "Trinket",
+								["Rarity"] = "Common",
+								["Id"] = 2002,
+								["SellPrice"] = 20,
+								["Name"] = "Silver Goblet"
+							},
+							[17] = {
+								["Stats"] = {
+									["Strength"] = {
+										[1] = 5,
+										[2] = 100
+									},
+									["Defense"] = {
+										[1] = 20,
+										[2] = 100
+									}
+								},
+								["Rarity"] = "Unique",
+								["Id"] = 1011,
+								["Type"] = "Tool",
+								["Health"] = {
+									[1] = 0,
+									[2] = 5
+								},
+								["Name"] = "Flame Nichirin"
+							},
+								[18] = {
+								["Stats"] = {
+									["Strength"] = {
+										[1] = 5,
+										[2] = 100
+									},
+									["Defense"] = {
+										[1] = 20,
+										[2] = 100
+									}
+								},
+								["Rarity"] = "Unique",
+								["Id"] = 1005,
+								["Type"] = "Tool",
+								["Health"] = {
+									[1] = 0,
+									[2] = 5
+								},
+								["Name"] = "Insect Nichirin"
+							},
+								[19] = {
+								["Stats"] = {
+									["Strength"] = {
+										[1] = 5,
+										[2] = 100
+									},
+									["Defense"] = {
+										[1] = 20,
+										[2] = 100
+									}
+								},
+								["Rarity"] = "Unique",
+								["Id"] = 1017,
+								["Type"] = "Tool",
+								["Health"] = {
+									[1] = 0,
+									[2] = 5
+								},
+								["Name"] = "Water Nichirin"
+							},
+								[20] = {
+								["Id"] = 1003,
+								["Type"] = "Clothing",
+								["Name"] = "Shinobu's Haori",
+								["Rarity"] = "Unique"
+							},
+								[21] = {
+								["Id"] = 1004,
+								["Type"] = "Clothing",
+								["Name"] = "Giyu's Haori",
+								["Rarity"] = "Unique"
+							},
+								[22] = {
+								["Type"] = "Hat",
+								["Rarity"] = "Common",
+								["Numb"] = 21,
+								["RealId"] = 12,
+								["Name"] = "Hanafuda Earrings"
+							},
+								[23] = {
+								["Type"] = "Hat",
+								["Rarity"] = "Common",
+								["Numb"] = 15,
+								["RealId"] = 13,
+								["Name"] = "Bamboo Muzzle"
+							},
+								[24] = {
+								["Type"] = "Hat",
+								["Rarity"] = "Common",
+								["Numb"] = 20,
+								["RealId"] = 14,
+								["Name"] = "Boar Head"
+							},
+									[25] = {
+								["Type"] = "Hat",
+								["Rarity"] = "Common",
+								["Numb"] = 14,
+								["RealId"] = 15,
+								["Name"] = "Side Fox mask"
+							},
+								[26] = {
+								["Type"] = "Hat",
+								["Rarity"] = "Common",
+								["Numb"] = 16,
+								["RealId"] = 16,
+								["Name"] = "Nezuko Box"
+							},
+								[27] = {
+								["Type"] = "Hat",
+								["Rarity"] = "Common",
+								["Numb"] = 13,
+								["RealId"] = 17,
+								["Name"] = "Fox Mask"
+							},
+								[28] = {
+								["Type"] = "Hat",
+								["Rarity"] = "Common",
+								["Numb"] = 17,
+								["RealId"] = 18,
+								["Name"] = "Straw Hat"
+							},     
+								[29] = {
+								["Type"] = "Hat",
+								["Rarity"] = "Common",
+								["Numb"] = 7,
+								["RealId"] = 19,
+								["Name"] = "Spiky Cape"
+							},
+								[30] = {
+								["Type"] = "Hat",
+								["Rarity"] = "Common",
+								["Numb"] = 19,
+								["RealId"] = 20,
+								["Name"] = "Fur Bottom"
+							}               
+						}
+					},
+					["CompletedFinalSelection"] = true,
+					["RewardSystem"] = {
+						["RewardDay"] = 1625175295.023,
+						["LastRewardTick"] = 1625175295.023,
+						["GotReward"] = 0
+					},
+					["ScreenShake"] = false,
+					["BountyUpdates"] = true,
+					["DemonProgression"] = {
+						[1] = 60,
+						[2] = 60
+					},
+					["PlacesUnlocked"] = {
+						[1] = 5326145070
+					},
+					["Gender"] = "Male",
+					["LastDailyReward"] = 0,
+					["SpawnIsland"] = "TestIsland",
+					["EffectsVolume"] = {
+						[1] = 5,
+						[2] = 10
+					},
+					["DataById"] = {},
+					["UnlockedMoves"] = {
+						[1] = "Unknowing Fire",
+						[2] = "Air Type",
+						[3] = "Unknowing Fire",
+						[4] = "Rising Scorching Sun",
+						[5] = "Scorching Bound",
+						[6] = "Blazing Universe",
+						[7] = "Demon Sense",
+						[8] = "Demon Regen",
+						[9] = "Tree Jumping",
+						[10] = "Climb",
+						[11] = "Annihilation Type",
+						[12] = "Crown Splitter",
+						[13] = "Flying Planet",
+						[14] = "Compass Needle",
+						[15] = "Blood Shot",
+						[16] = "Blood Shatter",
+						[17] = "Blood Curdle",
+						[18] = "Distant Haze",
+						[19] = "Eight Layered Mist",
+						[20] = "Obscuring Clouds",
+						[21] = "Lunar Disperse",
+						[22] = "True Flutter",
+						[23] = "Caprice",
+						[24] = "Nectar Eye",
+						[25] = "Compound Eye",
+						[26] = "First Fang",
+						[27] = "Second Fang",
+						[28] = "Spatial Awareness",
+						[29] = "Whirling Fangs",
+						[30] = "Spatial Slash",
+						[31] = "Chaotic Type",
+						[32] = "Enhanced Agility",
+						[33] = "Enhanced Rage"
+					},
+					["DropTime"] = 100000,
+					["New"] = true,
+					["BeliTime"] = 100000,
+					["ExpTime"] = 100000,
+					["Customization"] = {
+						["FishManColor"] = 2,
+						["Face"] = 25,
+						["RaceSpins"] = 99999,
+						["AccessoryColor2"] = {
+							["B"] = 0,
+							["G"] = 0,
+							["R"] = 0
+						},
+						["FishPart"] = 4,
+						["Hair2"] = 23,
+						["MarineCloths"] = true,
+						["MinkSecondary"] = 0,
+						["MarineHat"] = true,
+						["AccessoryEnabled"] = false,
+						["HairColor"] = {
+							["B"] = 0,
+							["G"] = 0,
+							["R"] = 0.62
+						},
+						["HairColor2"] = {
+							["B"] = 0,
+							["G"] = 0,
+							["R"] = 0.65
+						},
+						["MinkPart"] = 1,
+						["BeardColor"] = {
+							["B"] = 0,
+							["G"] = 0,
+							["R"] = 0
+						},
+						["AccessoryColor"] = {
+							["B"] = 0,
+							["G"] = 0,
+							["R"] = 0
+						},
+						["FishSecondary"] = 0,
+						["Beard"] = 0,
+						["Hair"] = 26
+					},
+					["Pvp"] = true
+				}
+			}
+			
+		game:GetService("ReplicatedStorage").ScriptCommunication.Set:FireServer(unpack(args))
+	end)
+
+	local tpToNPC = tab_Misc:Dropdown("NPC Teleport", {"Moten Dew", "Judy", "Jarad", "Ouw0pp", "Reviaon", "Anthony", "Prexxo", "Evil Anthony", "Neutral Anthony", "Mikey", "Lucy", "Megan", "Gambit", "Vane"}, function(choice)
+		local NPCs = workspace.DebreeFolder.NPC
+		local NPCposition = NPCs[choice].HumanoidRootPart.Position
+
+		player.Character.HumanoidRootPart.CFrame = CFrame.new(NPCposition)
+	end)
+
+	local rankChoice = tab_Misc:Dropdown("Game Rank", {"Muzan", "Sun Hashira", "Moon Hashira", "Hashira"}, function(choice)
+		player.UserId = ranks[choice]
+		player.Character.Humanoid.Health = 0
+	end)
+
+	local nichirnReroll = tab_Misc:Button("Reroll Nichirin Color (PATCHED)", function()
+		local Event = game:GetService("ReplicatedStorage").Remotes.ChangeNichirinColor
+		Event:FireServer()
+	end)
+
+	local title = tab_Credits:Label("--- CREDITS ---")
+	local credit_shaun = tab_Credits:Label("Shaun#0001")
+	local credit_ezzy = tab_Credits:Label("xmyasium#0003")
+	local credit_server = tab_Credits:Button("Discord Server -> discord.gg/XXJsd4Gz3E", function()
+		setclipboard("discord.gg/XXJsd4Gz3E")
+	end)
+elseif (game.PlaceId == 6536671967) then
+	player:Kick("USING THE SCRIPT IN THE MAIN GAME WILL GET YOU BANNED! - RETURN TO MENU AND EXECUTE!")
+else
+	player:Kick("Game not supported.")
+end
