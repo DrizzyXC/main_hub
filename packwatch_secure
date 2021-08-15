@@ -1,4 +1,3 @@
-
 if (game.PlaceId == 6536647319) then
 	local VLib = loadstring(game:HttpGet("https://pastebin.com/raw/i5bmyXNi"))()
 	local Main = VLib:Window("SLAYERS UNLEASHED - #PACKWATCH HUB")
@@ -171,7 +170,7 @@ if (game.PlaceId == 6536647319) then
 						[1] = 60,
 						[2] = 60
 					},
-					["Power"] = "Mist Breathing",
+					["Power"] = Breathing,
 					["KeyBinds"] = {
 						["Move2"] = "",
 						["Move6"] = "",
