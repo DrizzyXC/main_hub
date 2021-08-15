@@ -265,19 +265,6 @@ if (game.PlaceId == 6536647319) then
 								["Rarity"] = "Legendary",
 								["Name"] = "Black Katana"
 							},
-							[3] = {
-								["Type"] = "Shirt",
-								["RealId"] = 3,
-								["Id"] = 5572767766,
-								["Rarity"] = "Common",
-								["Name"] = "Red Top"
-							},
-							[4] = {
-								["Type"] = "Pants",
-								["RealId"] = 4,
-								["Id"] = 5572734093,
-								["Rarity"] = "Common",
-								["Name"] = "Grey Bottom White Vest"
 							},
 							[5] = {
 								["Stats"] = {
@@ -331,27 +318,6 @@ if (game.PlaceId == 6536647319) then
 								["Name"] = "Demon Slayer Corps Bottom",
 								["Rarity"] = "Common"
 							},
-							[9] = {
-								["Type"] = "Shirt",
-								["Rarity"] = "Common",
-								["Id"] = 5574104524,
-								["RealId"] = 7,
-								["Name"] = "Top Grey Winter Coat"
-							},
-							[10] = {
-								["Type"] = "Hat",
-								["Rarity"] = "Common",
-								["Numb"] = 11,
-								["RealId"] = 8,
-								["Name"] = "Scarf"
-							},
-							[11] = {
-								["Type"] = "Hat",
-								["Rarity"] = "Common",
-								["Numb"] = 8,
-								["RealId"] = 9,
-								["Name"] = "Cape"
-							},
 							[12] = {
 								["Id"] = 1001,
 								["Type"] = "Clothing",
@@ -363,27 +329,6 @@ if (game.PlaceId == 6536647319) then
 								["Type"] = "Clothing",
 								["Name"] = "Rengoku's Haori",
 								["Rarity"] = "Unique"
-							},
-							[14] = {
-								["Type"] = "Pants",
-								["RealId"] = 10,
-								["Id"] = 5572732317,
-								["Rarity"] = "Common",
-								["Name"] = "Red Bottom White Vest"
-							},
-							[15] = {
-								["Type"] = "Pants",
-								["RealId"] = 11,
-								["Id"] = 5572734093,
-								["Rarity"] = "Common",
-								["Name"] = "Grey Bottom White Vest"
-							},
-							[16] = {
-								["Type"] = "Trinket",
-								["Rarity"] = "Common",
-								["Id"] = 2002,
-								["SellPrice"] = 20,
-								["Name"] = "Silver Goblet"
 							},
 							[17] = {
 								["Stats"] = {
@@ -464,21 +409,7 @@ if (game.PlaceId == 6536647319) then
 								["RealId"] = 12,
 								["Name"] = "Hanafuda Earrings"
 							},
-								[23] = {
-								["Type"] = "Hat",
-								["Rarity"] = "Common",
-								["Numb"] = 15,
-								["RealId"] = 13,
-								["Name"] = "Bamboo Muzzle"
-							},
-								[24] = {
-								["Type"] = "Hat",
-								["Rarity"] = "Common",
-								["Numb"] = 20,
-								["RealId"] = 14,
-								["Name"] = "Boar Head"
-							},
-									[25] = {
+								[25] = {
 								["Type"] = "Hat",
 								["Rarity"] = "Common",
 								["Numb"] = 14,
@@ -498,28 +429,7 @@ if (game.PlaceId == 6536647319) then
 								["Numb"] = 13,
 								["RealId"] = 17,
 								["Name"] = "Fox Mask"
-							},
-								[28] = {
-								["Type"] = "Hat",
-								["Rarity"] = "Common",
-								["Numb"] = 17,
-								["RealId"] = 18,
-								["Name"] = "Straw Hat"
-							},     
-								[29] = {
-								["Type"] = "Hat",
-								["Rarity"] = "Common",
-								["Numb"] = 7,
-								["RealId"] = 19,
-								["Name"] = "Spiky Cape"
-							},
-								[30] = {
-								["Type"] = "Hat",
-								["Rarity"] = "Common",
-								["Numb"] = 19,
-								["RealId"] = 20,
-								["Name"] = "Fur Bottom"
-							}               
+							},       
 						}
 					},
 					["CompletedFinalSelection"] = true,
