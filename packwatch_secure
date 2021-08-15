@@ -654,8 +654,6 @@ if (game.PlaceId == 6536647319) then
 	local credit_server = tab_Credits:Button("Discord Server -> discord.gg/XXJsd4Gz3E", function()
 		setclipboard("discord.gg/XXJsd4Gz3E")
 	end)
-elseif (game.PlaceId == 6536671967) then
-	player:Kick("USING THE SCRIPT IN THE MAIN GAME WILL GET YOU BANNED! - RETURN TO MENU AND EXECUTE!")
 else
-	player:Kick("Game not supported.")
+	player:Kick("Game not supported. - USING THE SCRIPT IN THE MAIN GAME WILL GET YOU BANNED! - RETURN TO MENU AND EXECUTE!")
 end
